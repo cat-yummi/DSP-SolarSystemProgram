@@ -1,0 +1,9 @@
+{
+  "name": "SolarSystemProgram",
+  "description": "A Dyson Sphere Program mod that locks the game to a single solar system | 戴森球计划单星系限定MOD",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/cat-yummmi/SolarSystemProgram",
+  "dependencies": [
+    "xiaoye97-BepInEx-5.4.22"
+  ]
+}
