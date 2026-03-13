@@ -16,24 +16,18 @@ namespace SolarSystemProgram
         [HarmonyPatch(typeof(UIGalaxySelect), nameof(UIGalaxySelect._OnOpen))]
         public static void UIGalaxySelect_OnOpen_Postfix(UIGalaxySelect __instance)
         {
-            if (__instance.starCountSlider != null)
-            {
+            if (__instance.starCountSlider != null) {
                 var sliderGo = __instance.starCountSlider.gameObject;
                 
-                if (sliderGo.transform.parent != null)
-                {
+                if (sliderGo.transform.parent != null) {
                     sliderGo.transform.parent.gameObject.SetActive(false);
-                }
-                else
-                {
+                } else {
                     sliderGo.SetActive(false);
                 }
-                
                 SolarSystemProgram.Log.LogDebug("已隐藏星系数量滑块");
             }
             
-            if (__instance.starCountText != null)
-            {
+            if (__instance.starCountText != null) {
                 __instance.starCountText.gameObject.SetActive(false);
                 SolarSystemProgram.Log.LogDebug("已隐藏星系数量文本");
             }
@@ -46,8 +40,7 @@ namespace SolarSystemProgram
         [HarmonyPatch(typeof(UIGalaxySelect), nameof(UIGalaxySelect.OnStarCountSliderValueChange))]
         public static bool UIGalaxySelect_OnStarCountSliderValueChange_Prefix(UIGalaxySelect __instance)
         {
-            if (__instance.gameDesc != null)
-            {
+            if (__instance.gameDesc != null) {
                 __instance.gameDesc.starCount = 1;
             }
             return false;
